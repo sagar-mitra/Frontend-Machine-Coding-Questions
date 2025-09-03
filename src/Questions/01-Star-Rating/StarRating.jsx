@@ -8,7 +8,10 @@ const StarRating = ({ starCount = 5 }) => {
 
   return (
     <div className="star-rating">
-      <QuestionNavbar title="Star Rating"/>
+      <QuestionNavbar
+        title="Star Rating"
+        to="https://github.com/sagar-mitra/Frontend-Machine-Coding-Questions/blob/main/src/Questions/01-Star-Rating/StarRating.jsx"
+      />
       <div className="star-container">
         {new Array(starCount).fill("").map((item, index) => {
           return (

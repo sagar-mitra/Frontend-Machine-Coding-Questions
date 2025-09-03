@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 
-const QuestionNavbar = ({ title }) => {
+const QuestionNavbar = ({ title, to }) => {
   return (
     <div className="question-navbar">
       <p>{`Machine Coding Questions > ${title} `}</p>
 
-      <Link className="code-link">
+      <Link to={to} className="code-link">
         Source Code <MdArrowOutward className="arrow"/>{" "}
       </Link>
     </div>
