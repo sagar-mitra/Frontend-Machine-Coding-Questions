@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaCopy } from "react-icons/fa6";
-import "./password-generator.css"
+import "./password-generator.css";
 
 import usePasswordGenerator from "./hooks/usePasswordGenerator";
 import PasswordStrength from "./Components/PasswordStrength";
 import Checkbox from "./Components/Checkbox";
+import QuestionNavbar from "../QuestionNavbar";
 
 const PasswordGeneratorApp = () => {
   const [passLength, setPassLength] = useState(4);
@@ -38,69 +39,75 @@ const PasswordGeneratorApp = () => {
   const { password, errorMessage, generatePassword } = usePasswordGenerator();
 
   return (
-    <div className="container">
-      <div className="box">
-        {/* Heading  */}
-        <div className="heading">
-          <h1>Password Generator</h1>
-        </div>
-
-        {/* Generate Password Box  */}
-        <div className="password-box">
-          <h2>{password}</h2>
-          {copied ? (
-            <p>copied</p>
-          ) : (
-            <span className="copy-btn">
-              <FaCopy onClick={handleCopy} />
-            </span>
-          )}
-        </div>
-
-        {/* Lower Part  */}
-        <div className="lower-part">
-          {/* Character Length  */}
-          <div className="character-length-box">
-            <span className="flex">
-              <label className="pass-length-text">Character Length</label>
-              <label className="pass-length">{passLength}</label>
-            </span>
-            <input
-              className="slider"
-              type="range"
-              max={16}
-              min={4}
-              value={passLength}
-              onChange={(e) => setPassLength(e.target.value)}
-            />
+    <div className="password-generator-wrapper">
+      <QuestionNavbar
+        title="password-generator"
+        to="https://github.com/sagar-mitra/Frontend-Machine-Coding-Questions/tree/main/src/Questions/02-Password-Generator"
+      />
+      <div className="password-generator-container">
+        <div className="box">
+          {/* Heading  */}
+          <div className="heading">
+            <h1>Password Generator</h1>
           </div>
 
-          {/* Check Boxes  */}
-          <div className="options-box">
-            {checkboxData.map((item, index) => {
-              return (
-                <Checkbox
-                  key={index}
-                  item={item}
-                  index={index}
-                  handleCheckBox={handleCheckBox}
-                />
-              );
-            })}
+          {/* Generate Password Box  */}
+          <div className="password-box">
+            <h2>{password}</h2>
+            {copied ? (
+              <p>copied</p>
+            ) : (
+              <span className="copy-btn">
+                <FaCopy onClick={handleCopy} />
+              </span>
+            )}
           </div>
 
-          {/* Strength Box  */}
-          <PasswordStrength password={password} />
+          {/* Lower Part  */}
+          <div className="lower-part">
+            {/* Character Length  */}
+            <div className="character-length-box">
+              <span className="flex">
+                <label className="pass-length-text">Character Length</label>
+                <label className="pass-length">{passLength}</label>
+              </span>
+              <input
+                className="slider"
+                type="range"
+                max={16}
+                min={4}
+                value={passLength}
+                onChange={(e) => setPassLength(e.target.value)}
+              />
+            </div>
 
-          {/* Error Message */}
-          {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+            {/* Check Boxes  */}
+            <div className="options-box">
+              {checkboxData.map((item, index) => {
+                return (
+                  <Checkbox
+                    key={index}
+                    item={item}
+                    index={index}
+                    handleCheckBox={handleCheckBox}
+                  />
+                );
+              })}
+            </div>
 
-          <button
-            className="generate-btn"
-            onClick={() => generatePassword(checkboxData, passLength)}
-          >
-            GENERATE
-          </button>
+            {/* Strength Box  */}
+            <PasswordStrength password={password} />
+
+            {/* Error Message */}
+            {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+
+            <button
+              className="generate-btn"
+              onClick={() => generatePassword(checkboxData, passLength)}
+            >
+              GENERATE
+            </button>
+          </div>
         </div>
       </div>
     </div>
