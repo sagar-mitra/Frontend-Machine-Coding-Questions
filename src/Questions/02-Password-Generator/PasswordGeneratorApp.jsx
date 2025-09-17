@@ -5,7 +5,8 @@ import "./password-generator.css";
 import usePasswordGenerator from "./hooks/usePasswordGenerator";
 import PasswordStrength from "./Components/PasswordStrength";
 import Checkbox from "./Components/Checkbox";
-import QuestionNavbar from "../QuestionNavbar";
+import QuestionNavbar from "../../Components/QuestionNavbar";
+
 
 const PasswordGeneratorApp = () => {
   const [passLength, setPassLength] = useState(4);

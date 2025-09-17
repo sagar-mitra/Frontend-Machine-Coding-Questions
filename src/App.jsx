@@ -17,6 +17,7 @@ const App = () => {
         </p>
       </div>
 
+      {/* Questions Name */}
       <div className="questions-container">
         <div className="questions">
           {questions.map((question, index) => {

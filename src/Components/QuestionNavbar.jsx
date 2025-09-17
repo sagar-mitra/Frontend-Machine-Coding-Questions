@@ -4,7 +4,13 @@ import { MdArrowOutward } from "react-icons/md";
 const QuestionNavbar = ({ title, to }) => {
   return (
     <div className="question-navbar">
-      <p>{`Machine Coding Questions > ${title} `}</p>
+      <p>
+        <Link className="home-link" to="/">
+          Machine Coding Questions
+        </Link>{" "}
+        <span style={{ opacity: "50%" }}> {"> "}</span>
+        {title}
+      </p>
 
       <Link
         to={to}

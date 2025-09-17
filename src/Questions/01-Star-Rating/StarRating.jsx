@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./star-rating.css";
-import QuestionNavbar from "../QuestionNavbar";
+import QuestionNavbar from "../../Components/QuestionNavbar";
+
 
 const StarRating = ({ starCount = 5 }) => {
   const [starVlaue, setStarValue] = useState(0);

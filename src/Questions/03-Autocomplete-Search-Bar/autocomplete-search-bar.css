@@ -1,0 +1,74 @@
+.autocomplete-container {
+    max-width: 100vw;
+    min-height: 100vh;
+}
+
+.autocomplete-search-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.autocomplete-search-container h1 {
+    margin-bottom: 4rem;
+}
+
+.autocomplete-search-container .search-box {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.25rem;
+    border-radius: 5px;
+}
+
+.autocomplete-search-container .autocomplete-input {
+    width: 350px;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.autocomplete-search-container .search-icon {
+    width: 1rem;
+}
+
+.autocomplete-search-container .recipes {
+    width: 380px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.5rem 0;
+    border: 1px solid black;
+    border-top: 1px solid white;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 1rem;
+    overflow-y: scroll;
+}
+
+.autocomplete-search-container .recipes::-webkit-scrollbar {
+    display: none;
+}
+
+.autocomplete-search-container .recipe {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    transition: all 0.2s linear;
+}
+
+.autocomplete-search-container .recipe:hover {
+     background: #d8d8d8;
+}
+
+.autocomplete-search-container .recipe .search-icon-suggestion {
+    width: 0.8rem;
+}

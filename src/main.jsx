@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StarRating from "./Questions/01-Star-Rating/StarRating.jsx";
 import PasswordGeneratorApp from "./Questions/02-Password-Generator/PasswordGeneratorApp.jsx";
+import AutocompleteSearchBarApp from "./Questions/03-Autocomplete-Search-Bar/AutocompleteSearchBarApp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: "password-generator",
     element: <PasswordGeneratorApp />,
   },
+  {
+    path: "autocomplete-search-bar",
+    element: <AutocompleteSearchBarApp />
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
